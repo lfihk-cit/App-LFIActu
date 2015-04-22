@@ -7,7 +7,6 @@
         <link rel="stylesheet" type="text/css" href="styles.css" />
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
 		<script type="text/javascript">
-
 			// XML PARSER
 			function xmlparser()
 			{
@@ -15,16 +14,13 @@
 				xmlhttp=new XMLHttpRequest();
 				xmlhttp.open("GET", "http://www.fis.edu.hk/web/WebsiteFeeds.aspx?f=0&lang=fr-fr", true);
 				xmlhttp.overrideMimeType('text/xml; charset=iso-8859-1');
-				
 				xmlhttp.onreadystatechange=function()
 				{
 					if (xmlhttp.readyState==4 && xmlhttp.status==200)
 					{
 						xml_data = xmlhttp.responseXML;
 						items = xml_data.getElementsByTagName("item");
-						
-						content = '';
-												
+						content = '';					
 						for (i=0;i<items.length;i++)
 						{ 
 							content = content + '<div id="item_' + i + '" class="item"><div class="item_title" onclick="read('+ i +')">' + items[i].getElementsByTagName("title")[0].textContent;
@@ -42,13 +38,11 @@
 			{
 				var element = document.getElementById(i);  
 				var display = window.getComputedStyle(element, null).getPropertyValue("display");
-
 				if (display == 'none')
 				{
 					document.getElementById(i).style.display = "block";
 					document.getElementById('item_' + i).style.background = "#2980b9";
 					document.getElementById('item_date_' + i).style.color = "#ecf0f1";
-					
 					for (var n=0;n<200;n++)
 					{
 						if (n !== i) {
@@ -57,14 +51,12 @@
 							//document.getElementById('item_date_' + n).style.color = "silver";
 						}
 					}
-					
 				} else {
 					document.getElementById(i).style.display = "none";
 					document.getElementById('item_' + i).style.background = "white";
 					document.getElementById('item_date_' + i).style.color = "silver";
 				}
 			}			
-			
 		</script>
 		<title>LFI Actu</title>
 	</head>
@@ -77,9 +69,7 @@
 			<div class="header_lang"><a href="index_en.html">EN</a></div>
 			<div class="header_lang"><a href="index.html">FR</a></div>
 		</div>
-		
 
-		
 		<div id="content"><div style="text-align:center;padding:50px 0px 0px 0px;"><img src="images/loading.gif" width="64" /></div></div>
 		
 		<div id="footer">
