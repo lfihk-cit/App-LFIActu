@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="no-js">
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
+		 <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+
+		<link rel="stylesheet" type="text/css" href="AnimatedGridLayout/css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="AnimatedGridLayout/fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="AnimatedGridLayout/css/style1.css" />
+		<script src="AnimatedGridLayout/js/modernizr.custom.js"></script>		
+
+		<title>LFI Actu</title>
 		
-		<!--Import materialize.css-->
-		<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
-	
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
-		<link rel="stylesheet" type="text/css" href="styles.css" />
 		<script type="text/javascript">
 
 			// XML PARSER
@@ -16,7 +19,8 @@
 			{
 				var xmlhttp, xml_data, items, content;
 				xmlhttp=new XMLHttpRequest();
-				xmlhttp.open("GET", "http://www.fis.edu.hk/web/WebsiteFeeds.aspx?f=0&lang=fr-fr", true);
+				xmlhttp.open("GET", "feed.xml", true);
+				/*xmlhttp.open("GET", "http://www.fis.edu.hk/web/WebsiteFeeds.aspx?f=0&lang=fr-fr", true);*/
 				xmlhttp.overrideMimeType('text/xml; charset=iso-8859-1');
 				
 				xmlhttp.onreadystatechange=function()
@@ -26,107 +30,96 @@
 						xml_data = xmlhttp.responseXML;
 						items = xml_data.getElementsByTagName("item");
 						
-						content = '';
+						grid = '<header class="top-bar">';
+						grid += '<h2 class="top-bar__headline">Latest articles</h2>';
+						grid += '<div class="filter">';
+						grid += '<span>Filter by:</span>';
+						grid += '<span class="dropdown">Popular</span>';
+						grid += '</div>';
+						grid += '</header>';
+						
+						article = '';
 												
 						for (i=0;i<items.length;i++)
 						{ 
-							content = content + '<div id="item_' + i + '" class="item"><div class="item_title" onclick="read('+ i +')">' + items[i].getElementsByTagName("title")[0].textContent;
-							content = content + '</div><div id="item_date_' + i + '" class="item_date">' + items[i].getElementsByTagName("pubDate")[0].textContent.substring(0,10) + '</div>';
-							content = content + '<div id="' + i + '" class="item_description">' + items[i].getElementsByTagName("description")[0].textContent + '</div></div>';
+							grid += '<a class="grid__item" href="#">';
+							grid += '<h2 class="title title--preview">On Humans &amp; other Beings</h2>';
+							grid += '<div class="loader"></div>';
+							grid += '<span class="category">Stories for humans</span>';
+							grid += '<div class="meta meta--preview">';
+							grid += '<img class="meta__avatar" src="img/authors/1.png" alt="author01" />';
+							grid += '<span class="meta__date"><i class="fa fa-calendar-o"></i> 9 Apr</span>';
+							grid += '<span class="meta__reading-time"><i class="fa fa-clock-o"></i> 3 min read</span>';
+							grid += '</div>';
+							grid += '</a>';
+							
+							article += '<article class="content__item">';
+							article += '<span class="category category--full">Stories for humans</span>';
+							article += '<h2 class="title title--full">On Humans &amp; other Beings</h2>';
+							article += '<div class="meta meta--full">';
+							article += '<img class="meta__avatar" src="img/authors/1.png" alt="author01" />';
+							article += '<span class="meta__author">Matthew Walters</span>';
+							article += '<span class="meta__date"><i class="fa fa-calendar-o"></i> 9 Apr</span>';
+							article += '<span class="meta__reading-time"><i class="fa fa-clock-o"></i> 3 min read</span>';
+							article += '</div>';
+							article += '<p>I am fully aware of the shortcomings in these essays. I shall not touch upon those which are characteristic of first efforts at investigation. The others, however, demand a word of explanation.</p>';
+							article += '</article>';
+
+
+							//content + '<div id="item_' + i + '" class="item"><div class="item_title" onclick="read('+ i +')">' + items[i].getElementsByTagName("title")[0].textContent;
+							//content = content + '</div><div id="item_date_' + i + '" class="item_date">' + items[i].getElementsByTagName("pubDate")[0].textContent.substring(0,10) + '</div>';
+							//content = content + '<div id="' + i + '" class="item_description">' + items[i].getElementsByTagName("description")[0].textContent + '</div></div>';
 						}
-						content = content + '<br /><br /><br /><br />';
-						document.getElementById('content').innerHTML=content;
+						
+						document.getElementById('gridx').innerHTML=grid;
+						document.getElementById('article').innerHTML=article;
 					}
 				}
 				xmlhttp.send();
 			}
-
-			function read(i)
-			{
-				var element = document.getElementById(i);  
-				var display = window.getComputedStyle(element, null).getPropertyValue("display");
-
-				if (display == 'none')
-				{
-					document.getElementById(i).style.display = "block";
-					document.getElementById('item_' + i).style.background = "#2980b9";
-					document.getElementById('item_date_' + i).style.color = "#ecf0f1";
-					
-					for (var n=0;n<200;n++)
-					{
-						if (n !== i) {
-							//document.getElementById(n).style.display = "none";
-							//document.getElementById('item_' + n).style.background = "white";
-							//document.getElementById('item_date_' + n).style.color = "silver";
-						}
-					}
-					
-				} else {
-					document.getElementById(i).style.display = "none";
-					document.getElementById('item_' + i).style.background = "white";
-					document.getElementById('item_date_' + i).style.color = "silver";
-				}
-			}			
-			
+		
 		</script>
-		<title>LFI Actu</title>
 	</head>
 
 	<body>
 	
-		<div class="navbar-fixed">
-			<nav>
-				<div class="nav-wrapper">
-					<a href="#!" class="brand-logo">LFI Actu</a>
-					<a href="#!">FR EN</a>
+		<div class="container">
+			<button id="menu-toggle" class="menu-toggle"><span>Menu</span></button>
+			<div id="theSidebar" class="sidebar">
+				<button class="close-button fa fa-fw fa-close"></button>
+				<div class="codrops-links">
+					<a class="codrops-icon codrops-icon--prev" href="http://tympanus.net/Tutorials/MotionBlurEffect/" title="Previous Demo"><span>Previous Demo</span></a>
+					<a class="codrops-icon codrops-icon--drop" href="http://tympanus.net/codrops/?p=23872" title="Back to the article"><span>Back to the Codrops article</span></a>
+				</div>
+				<h1><span>Animated<span> Grid Layout</h1>
+				<nav class="codrops-demos">
+					<a class="current-demo" href="index.html">Demo 1</a>
+					<a href="index2.html">Demo 2</a>
+				</nav>
+				<div class="related">
+					<h3>Related Demos</h3>
+					<a href="http://tympanus.net/Development/BookPreview/">Book Preview</a>
+					<a href="http://tympanus.net/Tutorials/ThumbnailGridExpandingPreview/">Thumbnail Grid</a>
+					<a href="http://tympanus.net/Development/3DGridEffect/">3D Grid Effect</a>
+				</div>
+			</div>
+			<div id="theGrid" class="main">
+			
+				<section id="gridx" class="grid"></section>
+				
+				<section class="content">
+				
+					<div class="scroll-wrap"><div id="article">yyyyyy</div></div>
 					
-					<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-					<ul class="right hide-on-med-and-down">
-						<li><a href="index_en.html">EN</a></li>
-						<li><a href="index.html">FR</a></li>
-					</ul>
-					<ul class="side-nav" id="mobile-demo">
-						<li><a href="index_en.html">EN</a></li>
-						<li><a href="index.html">FR</a></li>
-					</ul>
-				</div>
-			</nav>
-		</div>
-		
-	
-
-		
-
-		<!-- CONTENT -->
-		<div id="content"><div style="text-align:center;padding:50px 0px 0px 0px;"><img src="images/loading.gif" width="64" /></div></div>
-		
-		<footer class="page-footer">
-			<div class="container">
-				<div class="row">
-					<div class="col s4">
-						<a class="grey-text text-lighten-3" href="http://pronote.fis.edu.hk/">PRONOTE</a>
-					</div>
-					<div class="col s4">
-						<a class="grey-text text-lighten-3" href="http://www.fis.edu.hk/web/">SITE WEB</a>
-					</div>
-					<div class="col s4">
-						<a class="grey-text text-lighten-3" href="about.html">A PROPOS</a></li>
-					</div>
-				</div>
+					<button class="close-button"><i class="fa fa-close"></i><span>Close</span></button>
+				</section>
 			</div>
-			<div class="footer-copyright">
-				<div class="container">
-					© 2014 Copyright Text
-					<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-				</div>
-			</div>
-		</footer>
+		</div><!-- /container -->
+		
+		<script src="AnimatedGridLayout/js/classie.js"></script>
+		<script src="AnimatedGridLayout/js/main.js"></script>
 		
 		<script type="text/javascript">window.onload = xmlparser();</script>
-		<!--Import jQuery before materialize.js-->
-		<script type="text/javascript" src="js/jquery/jquery-1.11.2.min.js"></script>
-		<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 		<script type="text/javascript" src="cordova.js"></script>
-
 	</body>
 </html>
