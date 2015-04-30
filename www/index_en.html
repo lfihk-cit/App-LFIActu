@@ -15,7 +15,6 @@
 				xmlhttp=new XMLHttpRequest();
 				xmlhttp.open("GET", "http://www.fis.edu.hk/web/WebsiteFeeds.aspx?f=0&lang=en-gb", true);
 				xmlhttp.overrideMimeType('text/xml; charset=iso-8859-1');
-				
 				xmlhttp.onreadystatechange=function()
 				{
 					if (xmlhttp.readyState==4 && xmlhttp.status==200)
@@ -53,7 +52,6 @@
 					document.getElementById('item_date_' + i).style.color = "silver";
 				}
 			}			
-			
 		</script>
 		<title>LFI News</title>
 	</head>
