@@ -13,7 +13,8 @@
 			{
 				var xmlhttp, xml_data, items, content;
 				xmlhttp=new XMLHttpRequest();
-				xmlhttp.open("GET", "http://www.fis.edu.hk/web/WebsiteFeeds.aspx?f=0&lang=en-gb", true);
+				xmlhttp.open("GET", "feed.xml", true);
+				/*xmlhttp.open("GET", "http://www.fis.edu.hk/web/WebsiteFeeds.aspx?f=0&lang=en-gb", true);*/
 				xmlhttp.overrideMimeType('text/xml; charset=iso-8859-1');
 				xmlhttp.onreadystatechange=function()
 				{
