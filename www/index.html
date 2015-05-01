@@ -17,7 +17,7 @@
 			{
 				var xmlhttp, xml_data, items, content, article, grid;
 				xmlhttp=new XMLHttpRequest();
-				xmlhttp.open("GET", "feed.xml", false);
+				xmlhttp.open("GET", "feed.xml", true);
 				/*xmlhttp.open("GET", "http://www.fis.edu.hk/web/WebsiteFeeds.aspx?f=0&lang=en-gb", true);*/
 				xmlhttp.overrideMimeType('text/xml; charset=iso-8859-1');
 				
@@ -35,7 +35,9 @@
 						grid += '</section>';
 
 						for (i=0;i<items.length;i++)
-						{
+						{ 
+
+							grid += '<section class="content content--show">';
 							grid += '<div class="scroll-wrap">';
 							grid += '<article class="content__item content__item--show">';
 							grid += '<h2 class="title" onclick="read('+ i +')">' + items[i].getElementsByTagName("title")[0].textContent + '</h2>';
@@ -45,11 +47,14 @@
 							
 							grid += '<div id="' + i + '" class="item_description">';
 							grid += items[i].getElementsByTagName("description")[0].textContent;
+							grid += '<button class="close-button close-button--show" onclick="read('+ i +')"><i class="fa fa-close"></i><span>Close</span></button>';
 							grid += '</div>';
 							
 							grid += '</article>';
 							grid += '</div>';
-							grid += '<button class="close-button close-button--show" onclick="read('+ i +')><i class="fa fa-close"></i><span>Close</span></button>';
+							
+							grid += '</section>';
+							
 						}
 
 						document.getElementById('grid').innerHTML=grid;
@@ -77,7 +82,7 @@
 			}
 		</script>
 
-		<title></title>
+		<title>LFI Actu</title>
 	</head>
 
 	<body>
@@ -104,30 +109,12 @@
 			</div>
 			
 			<div id="theGrid" class="main">
-				<section class="grid"></section>
-				<section class="content content--show" style="top: 0px;" id="grid"><div style="text-align:center;padding:50px 0px 0px 0px;"><img src="images/loading.gif" width="64" /></div></section>
-				
-
-				
-				
-				
-				
+				<section id="grid" class="grid"><div style="text-align:center;padding:50px 0px 0px 0px;"><img src="images/loading.gif" width="64" /></div></section>
 			</div>
-	
-
-
-
-
-
-
-
-	
+			
 		</div><!-- /container -->
 		
-		
 		<script defer type="text/javascript">window.onload = xmlparser();</script>	
-		<script src="AnimatedGridLayout/js/classie.js"></script>
-		<script src="AnimatedGridLayout/js/main.js"></script>
 		<script type="text/javascript" src="cordova.js"></script>
 	</body>
 </html>
