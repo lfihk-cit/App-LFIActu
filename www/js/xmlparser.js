@@ -13,18 +13,37 @@ function xmlparser()
 		{
 			xml_data = xmlhttp.responseXML;
 			items = xml_data.getElementsByTagName("item"); 
-						
-			xml_content = '';
+			
+			grid = '<header class="top-bar">';
+			grid += '<h2 class="top-bar__headline">Latest articles</h2>';
+			grid += '<div class="filter">';
+			grid += '<span>FR EN</span>';
+			grid += '</div>';
+			grid += '</header>';
+			
+			article = '';
 									
 			for (i=0;i<items.length;i++)
-			{
-				xml_content += '<div class="item_title" onclick="read('+ i +')"><h3>' + items[i].getElementsByTagName("title")[0].textContent + '</h3></div>';
-				xml_content += '<div style="text-align:center;><i class="fa fa-calendar-o"></i>' + items[i].getElementsByTagName("pubDate")[0].textContent.substring(0,10) + '</div>';
-				xml_content += '<div id="' + i + '" class="item_description">' + items[i].getElementsByTagName("description")[0].textContent + '</div>';
+			{ 
+				grid += '<a class="grid__item" href="#">';
+				grid += '<h2 class="title title--preview">' + items[i].getElementsByTagName("title")[0].textContent + '</h2>';
+				grid += '<div class="loader"></div>';
+				grid += '<div class="meta meta--preview">';
+				grid += '<span class="meta__date" style="text-align:center;float:none;"><i class="fa fa-calendar-o"></i>' + items[i].getElementsByTagName("pubDate")[0].textContent.substring(0,10) + '</span>';
+				grid += '</div>';
+				grid += '</a>';
+				
+				article += '<article class="content__item">';
+				article += '<h2 class="title title--full">' + items[i].getElementsByTagName("title")[0].textContent + '</h2>';
+				article += '<div class="meta meta--full">';
+				article += '<span class="meta__date" style="text-align:center;float:none;"><i class="fa fa-calendar-o"></i>' + items[i].getElementsByTagName("pubDate")[0].textContent.substring(0,10) + '</span>';
+				article += '</div>';
+				article += '<p>' + items[i].getElementsByTagName("description")[0].textContent + '</p>';
+				article += '</article>';
 			}
 			
-			document.getElementById('xml_content').innerHTML=xml_content;
-
+			document.getElementById('grid').innerHTML=grid;
+			document.getElementById('article').innerHTML=article;
 		}
 	}
 	xmlhttp.send();
