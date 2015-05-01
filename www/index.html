@@ -17,8 +17,8 @@
 			{
 				var xmlhttp, xml_data, items, content, article, grid;
 				xmlhttp=new XMLHttpRequest();
-				/*xmlhttp.open("GET", "feed.xml", true);*/
-				xmlhttp.open("GET", "http://www.fis.edu.hk/web/WebsiteFeeds.aspx?f=0&lang=en-gb", true);
+				xmlhttp.open("GET", "feed.xml", true);
+				/*xmlhttp.open("GET", "http://www.fis.edu.hk/web/WebsiteFeeds.aspx?f=0&lang=en-gb", true);*/
 				xmlhttp.overrideMimeType('text/xml; charset=iso-8859-1');
 				
 				xmlhttp.onreadystatechange=function()
@@ -28,32 +28,33 @@
 						xml_data = xmlhttp.responseXML;
 						items = xml_data.getElementsByTagName("item"); 
 						
-						grid = '';
+						grid = '<section class="grid">';
 						grid = '<header class="top-bar">';
 						grid += '<h2 class="top-bar__headline">Actualit&eacute; du LFI</h2>';
 						grid += '</header>';
-																		
+						grid += '</section>';
+
 						for (i=0;i<items.length;i++)
 						{ 
-							grid += '<div id="item_' + i + '" class="item">';
-							grid += '<a class="grid__item" href="#">';
-							grid += '<h2 class="title title--preview title" onclick="read('+ i +')">' + items[i].getElementsByTagName("title")[0].textContent + '</h2>';
-							grid += '<div class="meta meta--preview">';
-							grid += '<span class="meta__date" style="text-align:center;float:none;"><i class="fa fa-calendar-o"></i>' + items[i].getElementsByTagName("pubDate")[0].textContent.substring(0,10) + '</span>';
-							grid += '</div>';
-							grid += '</a>';
-							grid += '</div>';
-							
-							grid += '<div id="' + i + '" class="item_description">';
+
 							grid += '<section class="content content--show">';
 							grid += '<div class="scroll-wrap">';
 							grid += '<article class="content__item content__item--show">';
+							grid += '<h2 class="title" onclick="read('+ i +')">' + items[i].getElementsByTagName("title")[0].textContent + '</h2>';
+							grid += '<div class="meta meta--full">';
+							grid += '<span class="meta__date" style="text-align:center;float:none;"><i class="fa fa-calendar-o"></i>' + items[i].getElementsByTagName("pubDate")[0].textContent.substring(0,10) + '</span>';
+							grid += '</div>';
+							
+							grid += '<div id="' + i + '" class="item_description">';
 							grid += items[i].getElementsByTagName("description")[0].textContent;
+							grid += '<button class="close-button close-button--show" onclick="read('+ i +')"><i class="fa fa-close"></i><span>Close</span></button>';
+							grid += '</div>';
+							
 							grid += '</article>';
 							grid += '</div>';
-							grid += '<button class="close-button"><i class="fa fa-close"></i><span>Close</span></button>';
+							
 							grid += '</section>';
-							grid += '</div>';
+							
 						}
 
 						document.getElementById('grid').innerHTML=grid;

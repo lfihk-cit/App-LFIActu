@@ -750,7 +750,7 @@ button:focus {
 
 /* close button (for content and sidebar) */
 .close-button {
-  position: absolute;
+  position: fixed;
   border: none;
   background: none;
   margin: 0;
@@ -939,7 +939,7 @@ button:focus {
   }
 
   .content__item {
-    padding: 80px 20px 40px;
+    padding: 0px 20px 0px;
   }
 
   .content .close-button {
