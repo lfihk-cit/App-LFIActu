@@ -18,8 +18,8 @@ function xmlparser()
 									
 			for (i=0;i<items.length;i++)
 			{
-				xml_content += '<div class="item_title" onclick="read('+ i +')"><h3>' + items[i].getElementsByTagName("title")[0].textContent + '</h3></div>';
-				xml_content += '<div style="text-align:center;><i class="fa fa-calendar-o"></i>' + items[i].getElementsByTagName("pubDate")[0].textContent.substring(0,10) + '</div>';
+				xml_content += '<div id="title_' + i + '" class="item_title" onclick="read('+ i +')"><h5>' + items[i].getElementsByTagName("title")[0].textContent + '</h5></div>';
+				xml_content += '<div id="date_' + i + '"style="text-align:center;><i class="fa fa-calendar-o"></i>' + items[i].getElementsByTagName("pubDate")[0].textContent.substring(0,10) + '</div>';
 				xml_content += '<div id="' + i + '" class="item_description">' + items[i].getElementsByTagName("description")[0].textContent + '</div>';
 			}
 			

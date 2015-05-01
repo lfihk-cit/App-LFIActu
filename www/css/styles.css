@@ -1,6 +1,26 @@
 .item_description  {
 	display:none;
-	padding:20px;
-	margin:0px;
-	background-color:#eeeeee;
+	text-align:justify;
+}
+
+.item_title {
+	display:block;
+}
+
+.item_date {
+	display:block;
+}
+
+@font-face {
+  font-family: "martelsans";
+  src: url("../font/MartelSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: "playfairdisplaysc";
+  src: url("../font/PlayfairDisplaySC-Regular.ttf");
+}
+
+html {
+  font-family: "martelsans", sans-serif;
 }

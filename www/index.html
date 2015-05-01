@@ -20,14 +20,24 @@
 				if (display == 'none')
 				{
 					document.getElementById(i).style.display = "block";
-					//document.getElementById('item_' + i).style.background = "#2980b9";
-					//document.getElementById('item_' + i).style.border = "solid 2px black";
-					//document.getElementById('item_date_' + i).style.color = "#ecf0f1";
+					for (n=0;n<500;n++)
+					{
+						if (n != i)
+						{
+							document.getElementById('title_' + n).style.display = "none";
+							document.getElementById('date_' + n).style.display = "none";
+						}
+					}
 				} else {
 					document.getElementById(i).style.display = "none";
-					//document.getElementById('item_' + i).style.background = "white";
-					//document.getElementById('item_' + i).style.border = "solid 2px black";
-					//document.getElementById('item_date_' + i).style.color = "silver";
+					for (n=0;n<500;n++)
+					{
+						if (n != i)
+						{
+							document.getElementById('title_' + n).style.display = "block";
+							document.getElementById('date_' + n).style.display = "block";
+						}
+					}
 				}
 			}
 		</script>
