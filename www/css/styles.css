@@ -25,8 +25,8 @@ html {
   font-family: "martelsans", sans-serif;
 }
 
-#xml_content {
-	padding-top:10px;
+body {
+padding-top:80px;
 }
 
 .close_button {
@@ -48,4 +48,16 @@ nav .button-collapse i {
 
 nav .brand-logo {
     left: 100px;
+}
+
+.anchor {
+	display:block;
+	float:none;
+	clear:both;
+}
+
+.navbar-fixed {
+    position: fixed;
+	top:0px;
+	left:0px;
 }

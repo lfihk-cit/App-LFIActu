@@ -17,24 +17,28 @@
 			{
 				var element = document.getElementById(i);  
 				var display = window.getComputedStyle(element, null).getPropertyValue("display");
+
 				if (display == 'none')
 				{
 					document.getElementById(i).style.display = "block";
 					document.getElementById('close_' + i).style.display = "block";
-					for (n=0;n<500;n++)
+					
+					for (n=0;n<100;n++)
 					{
-						if (n != i)
+						if (n !== i)
 						{
 							document.getElementById('title_' + n).style.display = "none";
 							document.getElementById('date_' + n).style.display = "none";
 						}
 					}
+
 				} else {
 					document.getElementById(i).style.display = "none";
 					document.getElementById('close_' + i).style.display = "none";
-					for (n=0;n<500;n++)
+					
+					for (n=0;n<100;n++)
 					{
-						if (n != i)
+						if (n !== i)
 						{
 							document.getElementById('title_' + n).style.display = "block";
 							document.getElementById('date_' + n).style.display = "block";
@@ -75,7 +79,7 @@
 		</div>
 
 		<div class="row">
-			<div class="col s12">
+			<div class="col s12" style="clear:both;">
 				<div id="xml_content"><div style="text-align:center;padding:50px 0px 0px 0px;"><img src="images/loading.gif" width="64" /></div></div>
 			</div>
 		</div>
