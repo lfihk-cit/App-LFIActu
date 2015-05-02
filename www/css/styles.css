@@ -24,3 +24,16 @@
 html {
   font-family: "martelsans", sans-serif;
 }
+
+.close_button {
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	z-index:10000;
+	display:none;
+	cursor: pointer;
+}
+
+.button-collapse {
+	padding-left:10px;
+}

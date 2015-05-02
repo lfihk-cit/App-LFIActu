@@ -20,6 +20,7 @@
 				if (display == 'none')
 				{
 					document.getElementById(i).style.display = "block";
+					document.getElementById('close_' + i).style.display = "block";
 					for (n=0;n<500;n++)
 					{
 						if (n != i)
@@ -30,6 +31,7 @@
 					}
 				} else {
 					document.getElementById(i).style.display = "none";
+					document.getElementById('close_' + i).style.display = "none";
 					for (n=0;n<500;n++)
 					{
 						if (n != i)
@@ -48,16 +50,31 @@
 	<body>
 	
 		<div class="navbar-fixed">
-			<nav>
-			  <ul class="right hide-on-med-and-down">
-				<li><a href="#!">First Sidebar Link</a></li>
-				<li><a href="#!">Second Sidebar Link</a></li>
-			  </ul>
-			  <ul id="slide-out" class="side-nav">
-				<li><a href="#!">First Sidebar Link</a></li>
-				<li><a href="#!">Second Sidebar Link</a></li>
-			  </ul>
-			  <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+			<nav class="white">
+				<ul class="right hide-on-med-and-down">
+					<li><a href="#!">First Sidebar Link</a></li>
+					<li><a href="#!">Second Sidebar Link</a></li>
+				</ul>
+				<ul id="slide-out" class="grey lighten-4 side-nav">
+					<div class="row">
+						<div class="col s12">
+							<i class="grey-text small mdi-navigation-close right"></i>						
+						</div>
+						<div class="col s12">
+							<h5 class="grey-text center">Lycee Francais International de Hong Kong</h5>							
+						</div>
+						<div class="col s6">
+							<button class="btn waves-effect waves-light" type="submit" name="action">FR</i></button>
+						</div>
+						<div class="col s6">
+							<button class="btn waves-effect waves-light" type="submit" name="action">EN</i></button>
+						</div>
+					</div>
+					<li><a href="#!"><i class="mdi-action-settings left"></i> PRONOTE</a></li>
+					<li><a href="#!"><i class="mdi-action-bookmark left"></i> WEBSITE</a></li>
+					<li><a href="#!"><i class="mdi-action-visibility left"></i> A PROPOS</a></li>
+				</ul>
+				<a href="#" data-activates="slide-out" class="button-collapse"><i class="light-blue-text text-darken-3 mdi-navigation-menu"></i></a>
 			</nav>
 		</div>
 
