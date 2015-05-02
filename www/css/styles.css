@@ -25,6 +25,10 @@ html {
   font-family: "martelsans", sans-serif;
 }
 
+#xml_content {
+	padding-top:10px;
+}
+
 .close_button {
 	position: fixed;
 	top: 5px;
