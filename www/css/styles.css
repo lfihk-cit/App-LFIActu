@@ -41,3 +41,11 @@ html {
 .button-collapse {
 	padding-left:10px;
 }
+
+nav .button-collapse i {
+    font-size: 1.8rem;
+}
+
+nav .brand-logo {
+    left: 100px;
+}
