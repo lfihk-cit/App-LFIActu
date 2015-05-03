@@ -60,11 +60,18 @@ nav .brand-logo {
 
 .content{
 	clear:both;
-	height:100px;
+	height:1000px;
 	margin-top:64px;
-	overflow:scroll;
 }
 
 #xml_content {
 	padding-top:0px;
+}
+
+i.circle {
+	margin-top:10px;
+}
+
+.fixed-action-btn ul li a div {
+  padding-top: 2px;
 }
