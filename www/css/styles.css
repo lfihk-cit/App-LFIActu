@@ -25,6 +25,8 @@ html {
   font-family: "martelsans", sans-serif;
 }
 
+
+
 .close_button {
 	position: fixed;
 	top: 5px;
@@ -62,17 +64,10 @@ nav .brand-logo {
 	clear:both;
 	height:1000px;
 	margin-top:64px;
-	overflow:scroll;
+	overflow:auto;
+	z-index: 10000;
 }
 
 #xml_content {
 	padding-top:0px;
-}
-
-i.circle {
-	margin-top:10px;
-}
-
-.fixed-action-btn ul li a div {
-  padding-top: 2px;
 }
