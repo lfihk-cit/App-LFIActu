@@ -12,41 +12,7 @@
 		<!--Cutomization-->
 		<link type="text/css" rel="stylesheet" href="css/styles.css"/>
 		
-		<script type="text/javascript">
-			function read(i)
-			{
-				var element = document.getElementById(i);  
-				var display = window.getComputedStyle(element, null).getPropertyValue("display");
 
-				if (display == 'none')
-				{
-					document.getElementById(i).style.display = "block";
-					document.getElementById('close_' + i).style.display = "block";
-					
-					for (n=0;n<100;n++)
-					{
-						if (n !== i)
-						{
-							document.getElementById('title_' + n).style.display = "none";
-							document.getElementById('date_' + n).style.display = "none";
-						}
-					}
-
-				} else {
-					document.getElementById(i).style.display = "none";
-					document.getElementById('close_' + i).style.display = "none";
-					
-					for (n=0;n<100;n++)
-					{
-						if (n !== i)
-						{
-							document.getElementById('title_' + n).style.display = "block";
-							document.getElementById('date_' + n).style.display = "block";
-						}
-					}
-				}
-			}
-		</script>
 		
 		<title></title>
 	</head>
@@ -95,6 +61,41 @@
 		</div>
 
 		<!--JS-->
+		<script type="text/javascript">
+			function read(i)
+			{
+				var element = document.getElementById(i);  
+				var display = window.getComputedStyle(element, null).getPropertyValue("display");
+
+				if (display == 'none')
+				{
+					document.getElementById(i).style.display = "block";
+					document.getElementById('close_' + i).style.display = "block";
+					
+					for (n=0;n<100;n++)
+					{
+						if (n !== i)
+						{
+							document.getElementById('title_' + n).style.display = "none";
+							document.getElementById('date_' + n).style.display = "none";
+						}
+					}
+
+				} else {
+					document.getElementById(i).style.display = "none";
+					document.getElementById('close_' + i).style.display = "none";
+					
+					for (n=0;n<100;n++)
+					{
+						if (n !== i)
+						{
+							document.getElementById('title_' + n).style.display = "block";
+							document.getElementById('date_' + n).style.display = "block";
+						}
+					}
+				}
+			}
+		</script>
 		<script type="text/javascript">
 			function resize()
             {
