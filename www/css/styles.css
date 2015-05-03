@@ -62,7 +62,7 @@ nav .brand-logo {
 	clear:both;
 	height:1000px;
 	margin-top:64px;
-	overflow:auto;
+	overflow:scroll;
 }
 
 #xml_content {
