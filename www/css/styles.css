@@ -38,14 +38,6 @@ html {
 	padding-left:10px;
 }
 
-nav .button-collapse i {
-    font-size: 1.8rem;
-}
-
-nav .brand-logo {
-    left: 100px;
-}
-
 .anchor {
 	display:block;
 	float:none;
@@ -69,18 +61,4 @@ nav .brand-logo {
 #xml_content {
 	padding-top:0px;
 	height:1000px;
-}
-
-.collection .collection-item.avatar {
-	height: 70px;
-	padding-left: 72px;
-	position: relative;
-}
-
-.collection .collection-item {
-  background-color: #fff;
-  line-height: 1.5rem;
-  padding: 5px 20px 10px 20px;
-  margin: 0;
-  border-bottom: 1px solid #e0e0e0;
 }
