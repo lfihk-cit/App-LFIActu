@@ -24,7 +24,7 @@
 					
 					<ul class="right hide-on-med-and-down" style="padding-right:80px;">
 						<li class="collection-item avatar">
-							<a href="http://pronote.fis.edu.hk/" style="color:#212121">PRONOTE</a>
+							<a href="http://pronote.fis.edu.hk" style="color:#212121">PRONOTE</a>
 						</li>
 						<li class="collection-item avatar">
 							<a href="http://www.fis.edu.hk/web/" style="color:#212121">SITE WEB</a>
@@ -37,25 +37,27 @@
 					<ul id="slide-out" class="side-nav collection">
 						<div style="text-align:center;line-height:25px;padding-top:15px;"><img width="100" src="images/icon.png"></div>
 						<li class="collection-item avatar">
-							<a href="pronote_fr.html" style="color:#212121">PRONOTE</a>
+							<a href="http://pronote.fis.edu.hk" style="color:#212121">PRONOTE</a>
 						</li>
 						<li class="collection-item avatar">
-							<a href="website_fr.html" style="color:#212121">SITE WEB</a>
+							<a href="http://www.fis.edu.hk/web/" style="color:#212121">SITE WEB</a>
 						</li>
 						<li class="collection-item avatar">
 							<a href="about_fr.html" style="color:#212121">A PROPOS</a>
 						</li>
 					</ul>
-					<a href="#" data-activates="slide-out" class="button-collapse"><i class="light-blue-text text-darken-3 mdi-navigation-menu"></i></a>
+					<a href="#" data-activates="slide-out" class="button-collapse" id="iframe"><i class="light-blue-text text-darken-3 mdi-navigation-menu"></i></a>
 				</div>
 			</nav>
 		</div>
 
 		<div class="row" >
 			<div id="content" class="col s12 content">
-				<div id="xml_content"><div style="text-align:center;padding:50px 0px 0px 0px;"><img src="images/loading.gif" width="64" /></div></div>
+				<iframe id="iframe" src="http://pronote.fis.edu.hk" frameborder="0" scrolling="no"></iframe>
 			</div>
-		</div>
+		</div>		
+		
+		
 		
 		<div class="fixed-action-btn" style="bottom: 24px; right: 24px;">
 			<a class="btn-floating btn-large red">
@@ -66,43 +68,8 @@
 				<li><a class="btn-floating blue-grey darken-3" href="">EN</a></li>
 			</ul>
 		</div>
-
+		
 		<!--JS-->
-		<script type="text/javascript">
-			function read(i)
-			{
-				var element = document.getElementById(i);  
-				var display = window.getComputedStyle(element, null).getPropertyValue("display");
-
-				if (display == 'none')
-				{
-					document.getElementById(i).style.display = "block";
-					document.getElementById('close_' + i).style.display = "block";
-					
-					for (n=0;n<100;n++)
-					{
-						if (n !== i)
-						{
-							document.getElementById('title_' + n).style.display = "none";
-							document.getElementById('date_' + n).style.display = "none";
-						}
-					}
-
-				} else {
-					document.getElementById(i).style.display = "none";
-					document.getElementById('close_' + i).style.display = "none";
-					
-					for (n=0;n<100;n++)
-					{
-						if (n !== i)
-						{
-							document.getElementById('title_' + n).style.display = "block";
-							document.getElementById('date_' + n).style.display = "block";
-						}
-					}
-				}
-			}
-		</script>		
 		<script type="text/javascript">
 			function resize()
             {
@@ -114,8 +81,7 @@
             window.onresize = function() {
                 resize();
             };
-		</script>		
-		<script type="text/javascript" src="js/xmlparser.js"></script>
+		</script>
 		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 		<script type="text/javascript" src="js/materialize.min.js"></script>		
 		<script type="text/javascript" src="js/init.js"></script>
