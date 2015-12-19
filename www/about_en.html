@@ -1,56 +1,102 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
-        <link rel="stylesheet" type="text/css" href="styles.css" />
-		<title>LFI News - About</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		
+		
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+
+		<!--Cutomization-->
+		<link type="text/css" rel="stylesheet" href="css/styles.css"/>
+ 
+		<title></title>
 	</head>
 
 	<body>
-		<div id="header">
-			<div class="header_back">&nbsp;</div>
-			<div class="header_icon"><img src="images/icon.png" alt="AQHI Hong Kong Air Pollution" height="70" /></div>
-			<div class="header_title"></div>
-			<div class="header_lang"><a href="index_en.html">EN</a></div>
-			<div class="header_lang"><a href="index.html">FR</a></div>
+	
+		<div class="navbar-fixed">
+			<nav class="white">
+				<div class="nav-wrapper">
+					<a href="#" class="grey-text text-darken-1 brand-logo">FIS News</a>
+					
+					<ul class="right hide-on-med-and-down" style="padding-right:80px;">
+						<li class="collection-item avatar">
+							<a href="#" onclick="window.open(encodeURI('http://www.fis.edu.hk/web/Default.aspx?r=1&lang=en-en'), '_blank', 'location=yes');" style="color:#212121" target="_blank">WEBSITE</a>
+						</li>
+						<li class="collection-item avatar">
+							<a href="#" onclick="window.open(encodeURI('http://pronote.fis.edu.hk'), '_blank', 'location=yes');" style="color:#212121" target="_blank">PRONOTE</a>
+						</li>
+						<li class="collection-item avatar">
+							<a href="about_en.html" style="color:#212121">ABOUT</a>
+						</li>
+					</ul>					
+					
+					<ul id="slide-out" class="side-nav collection">
+						<div style="text-align:center;line-height:25px;padding-top:15px;"><a href="index_en.html"><img width="100" src="images/icon.png"></a></div>
+						<br />
+						<li class="collection-item avatar">
+							<i class="mdi-action-bookmark circle light-blue darken-3"></i><a href="#" onclick="window.open(encodeURI('http://www.fis.edu.hk/web/Default.aspx?r=1&lang=en-en'), '_blank', 'location=yes');">WEBSITE</a>
+						</li>
+						<li class="collection-item avatar">
+							<i class="mdi-action-settings circle light-blue darken-3"></i><a href="#" onclick="window.open(encodeURI('http://pronote.fis.edu.hk'), '_blank', 'location=yes');">PRONOTE</a>
+						</li>
+						<li class="collection-item avatar">
+							<i class="mdi-action-visibility circle light-blue darken-3"></i><a href="about_en.html">ABOUT</a>
+						</li>
+					</ul>
+					<a href="#" data-activates="slide-out" class="button-collapse"><i class="light-blue-text text-darken-3 mdi-navigation-menu"></i></a>
+				</div>
+			</nav>
+		</div>
+
+		<div class="row" >
+			<div id="content" class="col s12 content">
+
+				<p>	
+				Cette application a &eacute;t&eacute; d&eacute;velopp&eacute;e en partie par les &eacute;l&egrave;ves de l'enseignement d'exploration de seconde CIT (Cr&eacute;ation et Innovation Technlogiques) et de l'Atelier Num&eacute;rique du Lyc&eacute;e Fran&ccedil;ais International "Victor Segalen" de Hong Kong.
+				</p>
+				<p>Fonctionnalités:<br />
+				&nbsp; &nbsp; &bull; fil d'actualit&eacute; du Lyc&eacute;e Fran&ccedil;ais International "Victor Segalen" de Hong Kong<br />
+				&nbsp; &nbsp; &bull; acc&eacute;s au site internet du LFI<br />
+				&nbsp; &nbsp; &bull; acc&eacute;s &agrave; Pronote<br />
+				</p>
+
+				<p>
+				Enseignant responsable : M. Abbal [<a href="mailto:labbal@lfis.edu.hk" target="_top" class="mail">email</a>]
+				</p>
+
+			</div>
 		</div>
 		
-
-		
-		<div id="content">
-		<div class="about">
-			<p>	
-			You can share your comments at this address : <a href="mailto:lfishkcit@gmail.com" target="_top" class="mail">lfishkcit@gmail.com</a>
-			</p>
-			<p>	
-			After six months of work, thirteen students have developed this application for mobile phone. Since september, the students spent two hours a week learning web programming languages : HTML, CSS and JavaScript. Thus, they have been able to create a hybrid multiplatform application ( Android , iOS , Windows Phone, BlackBerry ... ) based on the open-source framework Apache Cordova.
-			</p>
-			<p>
-			The application is still in "beta" stage.
-			</p>
-			<p>Features :
+		<div class="fixed-action-btn" style="bottom: 24px; right: 24px;">
+			<a class="btn-floating btn-large red">
+				<i class="large mdi-action-translate"></i>
+			</a>
 			<ul>
-			<li>access to the newsfeed of the French International School "Victor Segalen" of Hong Kong</li>
-			<li>access to Pronote</li>
-			<li>access to the FIS website</li>
+				<li><a class="btn-floating blue-grey darken-3" href="about_fr.html">FR</a></li>
+				<li><a class="btn-floating blue-grey darken-3" href="">EN</a></li>
 			</ul>
-			</p>
-			<p>
-			Teacher : M. Abbal <a href="mailto:labbal@lfis.edu.hk" target="_top" class="mail">email</a>
-			</p>
 		</div>
-		</div>
-		
-		<div id="footer">
-			<a href="http://pronote.fis.edu.hk/">PRONOTE</a>
-			<a href="http://www.fis.edu.hk/web/">WEB SITE</a>
-			<a href="about.html">ABOUT</a>
-		</div>
-		
-		<script type="text/javascript">window.onload = xmlparser();</script>
-		<script type="text/javascript" src="cordova.js"></script>
 
+		<!--JS-->		
+		<script type="text/javascript">
+			function resize()
+            {
+                var heights = window.innerHeight;
+				heights = heights - 84;
+                document.getElementById('content').style.height = heights + "px";
+            }
+            window.onload = resize();
+            window.onresize = function() {
+                resize();
+            };
+		</script>		
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="js/materialize.min.js"></script>		
+		<script type="text/javascript" src="js/init.js"></script>
+		<script type="text/javascript" src="cordova.js"></script>
 	</body>
 </html>
