@@ -3,7 +3,6 @@ function xmlparser()
 {
 	var xmlhttp, xml_data, items, content, article, grid;
 	xmlhttp=new XMLHttpRequest();
-	/*xmlhttp.open("GET", "feed.xml", true);*/
 	xmlhttp.open("GET", "http://www.lfihk.net/lfi-feed/lfi-feed-fr.xml", true);
 	xmlhttp.overrideMimeType('text/xml; charset=iso-8859-1');
 	
