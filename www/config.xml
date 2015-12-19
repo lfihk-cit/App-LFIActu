@@ -103,14 +103,14 @@
     <string>100</string>
     </gap:config-file>
 
-    <!--
+    
         Define access to external domains.
 
         <access />            - a blank access tag denies access to all external resources.
         <access origin="*" /> - a wildcard access tag allows access to all external resource.
 
         Otherwise, you can specify specific domains:
-    -->
+    
     <access origin="*"/>
     <!--
         <access origin="http://phonegap.com" />                    - allow any secure requests to http://phonegap.com/
